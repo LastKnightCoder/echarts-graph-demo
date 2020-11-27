@@ -28,15 +28,11 @@ function BarGraph(props)  {
             }
         ]
     };
-    let theme = props.theme;
-    if (theme !== "light" && theme !== "dark") {
-        theme = "light";
-    }
 
     return (
         <ReactEcharts
             option={option}
-            theme={theme}
+            theme={config.theme}
             style={config.styles}
         />
     )
