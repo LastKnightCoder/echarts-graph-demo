@@ -5,6 +5,8 @@ import BarGraph from "./Graph/BarGraph";
 import LineGraph from "./Graph/LineGraph";
 import PieGraph from "./Graph/PieGraph";
 import RadarGraph from "./Graph/RadarGraph";
+import PolarBarGraph from "./Graph/PolarBarGraph";
+import CubicBarGraph from "./Graph/CubicBarGraph";
 
 const category = ['教职人员', '学生', '家长', '管理人员', '就业人员', '下岗人员'];
 const data = [200, 150, 250, 175, 100, 60];
@@ -32,6 +34,7 @@ const scores = [
     [22.3, 5.0, 4.5, 1.7, 1.3]
 ];
 
+const max = [300, 300, 300, 300, 300, 300];
 
 ReactDOM.render(
   <React.StrictMode>
@@ -66,6 +69,23 @@ ReactDOM.render(
     indicator={indicator}
     category={players}
     data={scores}
+    graphName={'Radar Graph'}
+  />
+  <PolarBarGraph
+    category={category}
+    data={data}
+    graphName={'PolarBar Graph'}
+    width={'60%'}
+    height={600}
+    // theme={'dark'}
+  />
+  <CubicBarGraph
+    category={category}
+    data={data}
+    max={max}
+    height={600}
+    width={'80%'}
+    graphName={'CubicBar Graph'}
   />
   </React.StrictMode>,
   document.getElementById('root')
